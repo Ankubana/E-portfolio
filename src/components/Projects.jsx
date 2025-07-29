@@ -46,7 +46,7 @@ const projects = [
 
 function Projects() {
   return (
-    <section id="projects">
+    <section id="projects"  style={{ position: 'relative' }}>
       <div className="container">
         <div className="row">
           <h1 className="section__title">

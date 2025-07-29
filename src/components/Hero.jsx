@@ -1,51 +1,154 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub,  } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope,faFilePdf } from '@fortawesome/free-solid-svg-icons';
-import Shape from './Shapes.jsx';
-import '../index.js'; // Only keep if it contains global CSS
+import React, { useState, useRef, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import Shape from "./Shapes.jsx";
+import WavingHand from "./Hand_weve";
+import "../index.js";
 
-function Hero({ onOpenModal }) {
- const [isModalOpen, setIsModalOpen] = useState(false);
+function Hero() {
+  const [showArrow, setShowArrow] = useState(false);
+  const [arrowPos, setArrowPos] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+ 
+  const aboutMeRef = useRef(null);
+  const resumeRef = useRef(null);
 
-const toggleModal = () => {
+  const handleAboutClick = () => {
+    setShowArrow(true);
+  };
+
+  const handleArrowClick = () => {
+    alert("Arrow clicked! You can do anything here.");
+  };
+
+  const handleEnvelopeClick = () => {
   setIsModalOpen(prev => {
-    const newState = !prev;
-    document.body.classList.toggle('modal--open', newState);
-    return newState;
-  });
-};
+      const newState = !prev;
+      document.body.classList.toggle('modal--open', newState);
+      return newState;
+    });
+  };
+
+  useEffect(() => {
+    if (showArrow && aboutMeRef.current && resumeRef.current) {
+      const start = aboutMeRef.current.getBoundingClientRect();
+      const end = resumeRef.current.getBoundingClientRect();
+      const container = document
+        .getElementById("landing-page")
+        .getBoundingClientRect();
+
+      setArrowPos({
+        x1: start.left + start.width /2 - container.left,
+        y1: start.top + start.height /2 - container.top,
+        x2: end.left + end.width /2- container.left,
+        y2: end.top + end.height /2 - container.top,
+      });
+    }
+  }, [showArrow]);
 
   return (
-    <section id="landing-page">
+    <section
+      id="landing-page"
+      style={{ position:"relative", padding: "2rem", minHeight: "400px"}}
+    >
       <header className="header">
         <div className="header__content">
-          <h1 className="title">Hey</h1>
+          <h1 className="title">
+            Hey <span className="wave"><WavingHand/></span>
+          </h1>
           <h1 className="title title--secondary orange">I'M ALPHONSE.</h1>
+
           <p className="header__par">
-            <span className="orange">I'm a frontend software engineer</span> with a strong passion for building web applications.
+            <span className="orange">
+              I'm a frontend software engineer
+            </span>{" "}
+            with a strong passion for building web applications.
             <br />
-            Here is a bit more <span className="orange click" onClick={onOpenModal}>about me</span>
+            Here is a bit more{" "}
+            <span
+              className="orange click"
+              onClick={handleAboutClick}
+              ref={aboutMeRef}
+              style={{ cursor: "pointer", textDecoration: "underline" }}
+            >
+              about me
+            </span>
           </p>
-          <div className="social__list">
-            <a href="https://www.linkedin.com/" className="social__link click" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} />
+
+          <div className="social__list" style={{ marginTop: "1rem" }}>
+            <a
+             href="https://www.linkedin.com/in/alphonse-nkubana"
+              className="social__link click"
+              target="_blank"
+              rel="noreferrer"
+              style={{ marginRight: "1rem" }}
+            >
+              <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
-            <a href="https://github.com/Ankubana/Alphonse_profile" className="social__link click" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faGithub} />
+            <a
+              href="https://github.com/Ankubana/Profile"
+              className="social__link click"
+              target="_blank"
+              rel="noreferrer"
+              style={{ marginRight: "1rem" }}
+            >
+              <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-            <a href="/Resume.pdf" className="social__link click" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFilePdf} />
+            <a
+              href="./Asset/i-751.pdf"
+              className="social__link click"
+              download="/Asset/i-751.pdf"
+              ref={resumeRef}
+          
+            >
+              <FontAwesomeIcon icon={faFilePdf} size="2x" />
             </a>
           </div>
         </div>
       </header>
- <a href="#projects" class="scroll">
- <div class="scroll__icon click" ></div></a>
-      <button className="mail__btn" onClick={toggleModal}>
-        <FontAwesomeIcon icon={faEnvelope} />
+
+      <button
+        className="mail__btn"
+        onClick={handleEnvelopeClick}
+        aria-label="Contact"
+      >
+        <FontAwesomeIcon icon={faEnvelope} size="lg" />
       </button>
-      {/* Render shapes behind hero section */}
+
+      {/* Thick clickable arrow from about me → Resume */}
+      {showArrow && arrowPos && (
+        <svg  className="arrow-svg">
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="15"
+              markerHeight="7"
+              refX="10"
+              refY="3.5"
+              orient="auto"
+              markerUnits="strokeWidth"
+            >
+              <polygon points="0 0, 15 3.5, 0 7" fill="blue" />
+            </marker>
+          </defs>
+
+          <g onClick={handleArrowClick} style={{ cursor: "pointer" }}>
+            <line
+              x1={arrowPos.x1}
+              y1={arrowPos.y1}
+              x2={arrowPos.x2}
+              y2={arrowPos.y2}
+              stroke="green"
+              strokeWidth={3} // thick arrow line
+              markerEnd="url(#arrowhead)"
+              strokeLinecap="round"
+            />
+          </g>
+        </svg>
+      )}
+
+      {/* Background shapes */}
       <Shape />
     </section>
   );

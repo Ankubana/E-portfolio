@@ -356,9 +356,30 @@ margin:0 12px;
     font-size:20px;
 }
 .orange{
-color:orangered !important
-
+color:orangered !important;
+animation:par 3000ms forwards step-end ;
 }
+.header__par{
+animation:par 25000ms forwards step-end ;
+}
+@keyframes par{
+    from{
+        transform:translateX(-1030px);
+      }
+      to{
+         transform:translateX(0);
+      }
+}
+.resume-container {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.resume-dark {
+  background-color: #121212 !important;
+  color: #f5f5f5;
+}
+
 .logo__title{
    font-size:18px;
    padding:10px;
@@ -369,6 +390,43 @@ color:orangered !important
     margin-bottom:12px;
     text-align:left;
     line-height:1;
+     animation:Hey 10000ms forwards ease-in;
+}
+
+@keyframes Hey{
+    from{
+        transform:translateX(-1030px);
+        
+      }
+      to{
+         transform:translateX(0);
+      }
+}
+.arrow-svg{
+ 
+ position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:auto;
+z-Index:1000;
+}
+.title--secondary{
+  font-size: 70px;
+    margin-bottom:12px;
+    text-align:left;
+    line-height:1;
+     animation:name 15000ms forwards ease-in;
+}
+@keyframes name{
+    from{
+        transform:translateY(-2500px);
+        
+      }
+      to{
+         transform:translateY(0);
+      }
 }
 .header{
     top:50%;
@@ -390,13 +448,14 @@ color:orangered !important
    }
 
 .mail__btn{
+  top:45;
  width:40px;
  height:40px;
  font-size:24px;
  background-color:#242424;
  color:white;
  position:absolute;
- bottom:32px;
+ bottom:120px;
  border-radius:50%;
  display:flex;
  align-items:center;
@@ -406,8 +465,7 @@ color:orangered !important
 }
 .click:hover{
 transform:scale(1.1);
-}
-
+} 
 .scroll{
  position:absolute;
  bottom:20px;
@@ -441,6 +499,9 @@ transform:scale(1.1);
          transform:translateY(-3px);
       }
 }
+
+ 
+
 .social__list{
  margin-top:16px;
  display:flex;
@@ -493,7 +554,10 @@ transform:scale(1.1);
 .project:hover{
 transform:scale(1.07);
    }
-
+.arrow-up{
+  width:2%;
+  height:50%;
+}
 .project__wrapper{
 position:relative;
 border-radius:20px; 

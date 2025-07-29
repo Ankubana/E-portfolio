@@ -31,11 +31,10 @@ function Footer() {
               href="https://github.com/Ankubana/Alphonse_profile"
               className="footer_social--link link__hover--effect link__hover-effect--white"
               target="_blank"
-              rel="noopener noreferrer"
+             download
             >
               Github
             </a>
-
             <a
               href="https://www.linkedin.com/in/alphonse-nkubana-a613351b6/"
               className="footer_social--link link__hover--effect link__hover-effect--white"
@@ -44,7 +43,6 @@ function Footer() {
             >
               LinkedIn
             </a>
-
             <a
               href="#"
               className="footer_social--link link__hover--effect link__hover-effect--white"
