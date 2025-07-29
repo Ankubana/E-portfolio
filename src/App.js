@@ -16,6 +16,7 @@ function AppContent() {
   return (
     <> 
        {!isResumePage && <BackgroundShapes />}
+       
       {!isResumePage && <Navbar />}
       {!isResumePage && <Hero />}
       {!isResumePage && <Modal />}
