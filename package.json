@@ -1,8 +1,8 @@
 {
   "name": "kuba-vision",
   "version": "0.1.0",
-  "private": true,
   "homepage": "https://Ankubana.github.io/Portifolio",
+  "public": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
