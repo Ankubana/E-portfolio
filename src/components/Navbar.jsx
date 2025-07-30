@@ -11,7 +11,7 @@ function Navbar() {
 const [darkMode,setDarkMode] = useState(false);
   // Toggle dark mode
   const openResumeInNewTab = () => {
-  window.open(`${window.location.origin}/Resume`, "_blank", "noopener,noreferrer");
+  window.open(`${window.location.origin}/E-portfolio/#/Resume`, "_blank", "noopener,noreferrer");
 };
 const toggleContrast = () => {
       setDarkMode(prev=>{
@@ -41,7 +41,7 @@ const toggleContrast = () => {
           
           <li className="nav__link">
   <a
-    href="https://ankubana.github.io/E-portfolio/#/Resume"
+    href="#"
     onClick={(e) => {
       e.preventDefault(); // prevents default navigation
       openResumeInNewTab();
