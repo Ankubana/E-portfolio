@@ -41,7 +41,7 @@ const toggleContrast = () => {
           
           <li className="nav__link">
   <a
-    href="#"
+    href="https://ankubana.github.io/E-portfolio/#/Resume"
     onClick={(e) => {
       e.preventDefault(); // prevents default navigation
       openResumeInNewTab();
