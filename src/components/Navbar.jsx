@@ -11,7 +11,7 @@ function Navbar() {
 const [darkMode,setDarkMode] = useState(false);
   // Toggle dark mode
   const openResumeInNewTab = () => {
-  window.open(`${window.location.origin}/E-portfolio/#/Resume`, "_blank", "noopener,noreferrer");
+  window.open(`${window.location.href.split('#')[0]}#/Resume`, "_blank", "noopener,noreferrer");
 };
 const toggleContrast = () => {
       setDarkMode(prev=>{
