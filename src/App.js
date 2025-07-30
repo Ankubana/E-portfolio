@@ -20,6 +20,7 @@ function AppContent() {
       {!isResumePage && <Hero />}
       {!isResumePage && <Modal />}
       {!isResumePage && <Projects />}
+      {!isResumePage && <Footer />}
       <Routes>
         <Route path="/Resume" element={<Resume />} />
       </Routes>

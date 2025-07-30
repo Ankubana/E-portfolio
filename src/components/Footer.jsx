@@ -28,7 +28,7 @@ function Footer() {
 
           <div className="footer__social--list">
             <a
-              href="https://github.com/Ankubana/Alphonse_profile"
+              href="https://github.com/Ankubana"
               className="footer_social--link link__hover--effect link__hover-effect--white"
               target="_blank"
              download
@@ -36,7 +36,7 @@ function Footer() {
               Github
             </a>
             <a
-              href="https://www.linkedin.com/in/alphonse-nkubana-a613351b6/"
+              href="https://www.linkedin.com/in/alphonse-nkubana"
               className="footer_social--link link__hover--effect link__hover-effect--white"
               target="_blank"
               rel="noopener noreferrer"
