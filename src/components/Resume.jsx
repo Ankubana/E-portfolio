@@ -48,7 +48,7 @@ const Resume = () => {
         <h1 data-aos="fade-right" data-aos-delay={0}>Alphonse NKUBANA</h1>
         <p style={styles.contact} data-aos="fade-left" data-aos-delay={150}>
         <span className="resume-container">Frontend Developer</span><br />
-          <a href="https://www.linkedin.com/in/alphonse-nkubana" style={{color:"#2980b9"}}>LinkedIn</a> | <a href="https://github.com/Ankubana/"style={{color:"#2980b9"}}>GitHub</a> |<span className="resume-container"> (+1) 612-636-3702 | kubalpha1@gmail.com</span><br />
+          <a href="https://www.linkedin.com/in/alphonse-nkubana" style={{color:"#2980b9"}}>LinkedIn</a> | <a href="https://github.com/Ankubana/Profile"style={{color:"#2980b9"}}>GitHub</a> |<span className="resume-container"> (+1) 612-636-3702 | kubalpha1@gmail.com</span><br />
          <span className="resume-container"> Blaine, Minnesota, USA |<a href="https://github.com/Ankubana/Profile" style={{color:"#2980b9"}}>Portfolio</a></span>
         </p>
       </header>   
