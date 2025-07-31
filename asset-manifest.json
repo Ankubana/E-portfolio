@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/E-portfolio/static/css/main.3d7dbb01.css",
+    "main.css": "/E-portfolio/static/css/main.64442fdb.css",
     "main.js": "/E-portfolio/static/js/main.a666b4ca.js",
     "static/js/453.eb3cd83b.chunk.js": "/E-portfolio/static/js/453.eb3cd83b.chunk.js",
     "static/media/frontend_developer_img.png": "/E-portfolio/static/media/frontend_developer_img.d8bc0b08b63f7f9e0580.png",
@@ -13,12 +13,12 @@
     "static/media/circle.svg": "/E-portfolio/static/media/circle.05d1b2e751fae181c8d2dc037d49af1f.svg",
     "static/media/semi-circle.svg": "/E-portfolio/static/media/semi-circle.c907f90d25fded7006f6842c844bf5ea.svg",
     "static/media/triangle.svg": "/E-portfolio/static/media/triangle.ef56d9ee9c4fd57dd0aa41b3c639d3b3.svg",
-    "main.3d7dbb01.css.map": "/E-portfolio/static/css/main.3d7dbb01.css.map",
+    "main.64442fdb.css.map": "/E-portfolio/static/css/main.64442fdb.css.map",
     "main.a666b4ca.js.map": "/E-portfolio/static/js/main.a666b4ca.js.map",
     "453.eb3cd83b.chunk.js.map": "/E-portfolio/static/js/453.eb3cd83b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3d7dbb01.css",
+    "static/css/main.64442fdb.css",
     "static/js/main.a666b4ca.js"
   ]
 }
