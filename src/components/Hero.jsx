@@ -1,16 +1,15 @@
+// Hero.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import Shape from "./Shapes.jsx";
 import WavingHand from "./Hand_weve";
-import "../index.js";
 
-function Hero() {
+function Hero({ onOpenModal }) {
   const [showArrow, setShowArrow] = useState(false);
   const [arrowPos, setArrowPos] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
- 
+
   const aboutMeRef = useRef(null);
   const resumeRef = useRef(null);
 
@@ -23,46 +22,41 @@ function Hero() {
   };
 
   const handleEnvelopeClick = () => {
-  setIsModalOpen(prev => {
-      const newState = !prev;
-      document.body.classList.toggle('modal--open', newState);
-      return newState;
-    });
+    onOpenModal?.(); // open modal in App.js
   };
 
   useEffect(() => {
-    if (showArrow && aboutMeRef.current && resumeRef.current) {
-      const start = aboutMeRef.current.getBoundingClientRect();
-      const end = resumeRef.current.getBoundingClientRect();
-      const container = document
-        .getElementById("landing-page")
-        .getBoundingClientRect();
+    const updateArrow = () => {
+      if (showArrow && aboutMeRef.current && resumeRef.current) {
+        const start = aboutMeRef.current.getBoundingClientRect();
+        const end = resumeRef.current.getBoundingClientRect();
+        const container = document.getElementById("landing-page").getBoundingClientRect();
 
-      setArrowPos({
-        x1: start.left + start.width /2 - container.left,
-        y1: start.top + start.height /2 - container.top,
-        x2: end.left + end.width /2- container.left,
-        y2: end.top + end.height /2 - container.top,
-      });
-    }
+        setArrowPos({
+          x1: start.left + start.width / 2 - container.left,
+          y1: start.top + start.height / 2 - container.top,
+          x2: end.left + end.width / 2 - container.left,
+          y2: end.top + end.height / 2 - container.top,
+        });
+      }
+    };
+
+    updateArrow();
+    window.addEventListener("resize", updateArrow);
+    return () => window.removeEventListener("resize", updateArrow);
   }, [showArrow]);
 
   return (
-    <section
-      id="landing-page"
-      style={{ position:"relative", padding: "2rem", minHeight: "400px"}}
-    >
+    <section id="landing-page" style={{ position: "relative", padding: "2rem", minHeight: "400px" }}>
       <header className="header">
         <div className="header__content">
           <h1 className="title">
-            Hey <span className="wave"><WavingHand/></span>
+            Hey <span className="wave"><WavingHand /></span>
           </h1>
           <h1 className="title title--secondary orange">I'M ALPHONSE.</h1>
 
           <p className="header__par">
-            <span className="orange">
-              I'm a frontend software engineer
-            </span>{" "}
+            <span className="orange">I'm a frontend software engineer</span>{" "}
             with a strong passion for building web applications.
             <br />
             Here is a bit more{" "}
@@ -78,11 +72,12 @@ function Hero() {
 
           <div className="social__list" style={{ marginTop: "1rem" }}>
             <a
-             href="https://www.linkedin.com/in/alphonse-nkubana"
+              href="https://www.linkedin.com/in/alphonse-nkubana"
               className="social__link click"
               target="_blank"
               rel="noreferrer"
               style={{ marginRight: "1rem" }}
+              aria-label="LinkedIn Profile"
             >
               <FontAwesomeIcon icon={faLinkedin} size="2x" />
             </a>
@@ -92,15 +87,16 @@ function Hero() {
               target="_blank"
               rel="noreferrer"
               style={{ marginRight: "1rem" }}
+              aria-label="GitHub Profile"
             >
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
             <a
               href="./Asset/i-751.pdf"
               className="social__link click"
-              download="/Asset/i-751.pdf"
+              download
               ref={resumeRef}
-          
+              aria-label="Download Resume"
             >
               <FontAwesomeIcon icon={faFilePdf} size="2x" />
             </a>
@@ -116,9 +112,9 @@ function Hero() {
         <FontAwesomeIcon icon={faEnvelope} size="lg" />
       </button>
 
-      {/* Thick clickable arrow from about me → Resume */}
+      {/* Arrow */}
       {showArrow && arrowPos && (
-        <svg  className="arrow-svg">
+        <svg className="arrow-svg">
           <defs>
             <marker
               id="arrowhead"
@@ -132,7 +128,6 @@ function Hero() {
               <polygon points="0 0, 15 3.5, 0 7" fill="blue" />
             </marker>
           </defs>
-
           <g onClick={handleArrowClick} style={{ cursor: "pointer" }}>
             <line
               x1={arrowPos.x1}
@@ -140,7 +135,7 @@ function Hero() {
               x2={arrowPos.x2}
               y2={arrowPos.y2}
               stroke="green"
-              strokeWidth={3} // thick arrow line
+              strokeWidth={3}
               markerEnd="url(#arrowhead)"
               strokeLinecap="round"
             />
@@ -148,7 +143,6 @@ function Hero() {
         </svg>
       )}
 
-      {/* Background shapes */}
       <Shape />
     </section>
   );

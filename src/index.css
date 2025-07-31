@@ -133,10 +133,10 @@ nav,.scroll,.header{
 /*modal*/
 
 .modal{
-position:relative;
-top:30%;
+position:absolute;
+top:0;
 margin:auto;
-transform:translate(-50% -50%) ! important;
+transform:translate(-50%) ! important;
 width:100%;
 max-width:1100px;
 height:500px;
@@ -239,6 +239,7 @@ visibility:hidden;
     z-index:100;
  }
  .modal__overlay--visible{
+ 
     z-index:1;
     display:flex;
  }

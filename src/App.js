@@ -1,5 +1,8 @@
-import React from 'react';
+// App.js
+import React, { useState } from 'react';
 import './index.css';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -7,19 +10,30 @@ import Modal from './components/Modal';
 import Footer from './components/Footer';
 import BackgroundShapes from './components/BackgroundShapes';
 import Resume from './components/Resume';
-import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 
 function AppContent() {
   const location = useLocation();
-  const isResumePage = location.pathname === "/Resume";
+  const isResumePage = location.pathname.toLowerCase() === "/resume";
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+    document.body.classList.add('modal--open');
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    document.body.classList.remove('modal--open');
+  };
 
   return (
     <>
       {!isResumePage && <BackgroundShapes />}
       {!isResumePage && <Navbar />}
-      {!isResumePage && <Hero />}
-      {!isResumePage && <Modal />}
-      {!isResumePage && <Projects />}
+      {!isResumePage && <Hero onOpenModal={handleOpenModal} isModalOpen={isModalOpen} onCloseModal={handleCloseModal}/>}
+      {!isResumePage && isModalOpen && <Modal onClose={handleCloseModal} />}
+      {!isResumePage && <Projects />} 
       <Routes>
         <Route path="/Resume" element={<Resume />} />
       </Routes>
@@ -27,7 +41,6 @@ function AppContent() {
     </>
   );
 }
-
 function App() {
   return (
     <Router>
@@ -35,5 +48,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
