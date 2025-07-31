@@ -57,7 +57,9 @@ const toggleContrast = () => {
             <a href="#" className="nav_link--anchor" onClick={toggleContrast}><FontAwesomeIcon icon={faAdjust} /></a>
           </li>
         </ul>
+        
       </nav>
+      
     </section>
   );
 }

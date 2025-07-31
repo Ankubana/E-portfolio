@@ -269,7 +269,10 @@ position: relative;
 flex-direction:column;
 justify-content:center;
 }
-
+.Resume-link{
+ top:5px;
+ margin:auto
+}
 .modal__languange:hover .languange__name{
     transform:scale(1);
    }
