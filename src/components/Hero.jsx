@@ -84,9 +84,10 @@ function Hero({ onOpenModal }) {
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
             <a
-              href="/Asset/Alphonse_Resume.pdf"  // Make sure the path is correct relative to the public folder
+              href="/Alphonse_Resume.pdf"  // Make sure the path is correct relative to the public folder
               className="social__link click"
-              download="Alphonse_Resume.pdf"
+              download="/Alphonse_Resume.pdf"
+               rel="noopener noreferrer"
             >
               <FontAwesomeIcon icon={faFilePdf} size="2x" />
             </a>

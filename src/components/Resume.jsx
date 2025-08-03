@@ -47,7 +47,7 @@ const Resume = () => {
     
     <div style={styles.container} className="resume-container">
       <Link to="/Hero" className="Resume__link">
-      <FontAwesomeIcon icon="arrow-left" />Back
+      <FontAwesomeIcon icon="arrow-left"/>
               </Link>
 
       {/* Header */}

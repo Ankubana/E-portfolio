@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
 import React from 'react';
-import frontendImg from '../Assets/frontend_developer_img.pn';
+import frontendImg from '../Assets/eportifolio_image.png';
 import internshipImg from '../Assets/internship_project.png';
 import movieImg from '../Assets/Books_sub.png';
 import bookImg from '../Assets/library_img.png';
