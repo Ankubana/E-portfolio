@@ -16,7 +16,6 @@ function Footer() {
     <footer>
       <div className="container">
         <div className="row row__footer">
-          
           <div className="footer__log--wrapper">
             <figure className="footer__log">
               <img src={vision_img} alt="KubaVision Logo" className="footer__log--img" />
