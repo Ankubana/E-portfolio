@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "aos/dist/aos.css";
@@ -46,11 +47,13 @@ const Resume = () => {
     
     <div style={styles.container} className="resume-container">
       <Link to="/Hero" className="Resume__link">
-                <FontAwesomeIcon icon="arrow-left" />
+      <FontAwesomeIcon icon="arrow-left" />Back
               </Link>
 
       {/* Header */}
       <header style={styles.header} className="resume-container">
+        
+        
         <h1 data-aos="fade-right" data-aos-delay={0}>Alphonse NKUBANA</h1>
         <p style={styles.contact} data-aos="fade-left" data-aos-delay={150}>
         <span className="resume-container">Frontend Developer</span><br />
@@ -62,11 +65,11 @@ const Resume = () => {
       <section style={styles.section} className="resume-container">
         <h2 style={styles.heading} data-aos="fade-right" data-aos-delay={0}>Professional Summary</h2>
         {renderAnimatedLines([
-          "Motivated and detail-oriented Frontend Developer with hands-on experience gained through intensive bootcamp training and real-world projects.",
-          "Skilled in building responsive and user-friendly web interfaces using HTML, CSS, JavaScript, and React.",
-          "Former IT and Communication Specialist with proven technical support, troubleshooting, and team collaboration skills.",
-          "Contributed to curriculum development as a practitioner, demonstrating strong understanding of tech education and user-focused learning.",
-          "Committed to continuous learning and ready to bring creativity, problem-solving, and passion for clean code to a dynamic development team."
+          "• Motivated and detail-oriented Frontend Developer with hands-on experience gained through intensive bootcamp training and real-world projects.",
+          "• Skilled in building responsive and user-friendly web interfaces using HTML, CSS, JavaScript, and React.",
+          "• Former IT and Communication Specialist with proven technical support, troubleshooting, and team collaboration skills.",
+          "• Contributed to curriculum development as a practitioner, demonstrating strong understanding of tech education and user-focused learning.",
+          "• Committed to continuous learning and ready to bring creativity, problem-solving, and passion for clean code to a dynamic development team."
        
        ])}
       </section>
@@ -79,11 +82,11 @@ const Resume = () => {
           <h3 data-aos="fade-right" data-aos-delay={0}>Frontend Engineer – Personal Projects | Feb 2025 – Present</h3>
           <ul>
             {renderAnimatedListItems([
-              "Completed a frontend development bootcamp (HTML, CSS, JS, React, Git•	Completed an intensive frontend development bootcamp covering HTML, CSS, JavaScript, React, Git, and responsive web design).",
-              "•Built multiple real-world projects including an NFT marketplace, online library and online movie store.",
-              "Used modern tools: React Router, Axios, Tailwind CSS, GitHub•	Practiced modern frontend tooling like React Router, Axios, Tailwind CSS, and GitHub for version control.",
-              "I am familiar with working with RESTful APIs and implementing user interface animations.",
-              "•	Designed clean, user-focused interfaces with a mobile-first approach."
+              "• Completed a frontend development bootcamp (HTML, CSS, JS, React, Git•	Completed an intensive frontend development bootcamp covering HTML, CSS, JavaScript, React, Git, and responsive web design).",
+              "• Built multiple real-world projects including an NFT marketplace, online library and online movie store.",
+              "• Used modern tools: React Router, Axios, Tailwind CSS, GitHub•	Practiced modern frontend tooling like React Router, Axios, Tailwind CSS, and GitHub for version control.",
+              "• I am familiar with working with RESTful APIs and implementing user interface animations.",
+              "• Designed clean, user-focused interfaces with a mobile-first approach."
             ])}
           </ul>
         </div>
@@ -103,12 +106,12 @@ const Resume = () => {
           <h3 data-aos="fade-right" data-aos-delay={0}>Full-Stack Developer | Feb 2021 – May 2022</h3>
           <ul>
             {renderAnimatedListItems([
-              "Designed and developed a fully functional multi-vendor e-commerce platform to allow individuals to register, list, and sell products online..",
-              "Implemented auth, product listing, search, shopping cart•	Built user authentication, product listing, search functionality, and shopping cart features using PHP and MySQL.",
-              "Used HTML, CSS, Bootstrap, JavaScript for UICreated responsive, mobile-friendly front-end interfaces using HTML, CSS, Bootstrap, and   JavaScript.",
-              "Structured vendor/customer databases and transactionsImplemented database structure for user roles (vendors/customers), product categories, orders, and transactions.",
-              "Enabled dynamic content loading and form validations to enhance user experience and prevent errors",
-              "Secured code with SQL injection prevention, session handlingFocused on security measures like form validation, SQL injection prevention, and session handling."
+              "• Designed and developed a fully functional multi-vendor e-commerce platform to allow individuals to register, list, and sell products online..",
+              "• Implemented auth, product listing, search, shopping cart•	Built user authentication, product listing, search functionality, and shopping cart features using PHP and MySQL.",
+              "• Used HTML, CSS, Bootstrap, JavaScript for UICreated responsive, mobile-friendly front-end interfaces using HTML, CSS, Bootstrap, and   JavaScript.",
+              "• Structured vendor/customer databases and transactionsImplemented database structure for user roles (vendors/customers), product categories, orders, and transactions.",
+              "• Enabled dynamic content loading and form validations to enhance user experience and prevent errors",
+              "• Secured code with SQL injection prevention, session handlingFocused on security measures like form validation, SQL injection prevention, and session handling."
             ])}
           </ul>
         </div>
@@ -117,10 +120,10 @@ const Resume = () => {
           <h3 data-aos="fade-left" data-aos-delay={0}>IT & Communication Specialist – MCT Global | 2019 – 2021</h3>
           <ul>
             {renderAnimatedListItems([
-              "Supported the company’s digital infrastructure including computer systems, software, and communication tools.",
-              "Provided technical assistance to internal teams, helping to ensure efficient operations.",
-              "Coordinated technical communication between departments and stakeholders.",
-              "Gained experience in troubleshooting, team collaboration, and tech support — transferable skills to frontend debugging and client support roles.",
+              "• Supported the company’s digital infrastructure including computer systems, software, and communication tools.",
+              "• Provided technical assistance to internal teams, helping to ensure efficient operations.",
+              "• Coordinated technical communication between departments and stakeholders.",
+              "• Gained experience in troubleshooting, team collaboration, and tech support — transferable skills to frontend debugging and client support roles.",
             ])}
           </ul>
         </div>

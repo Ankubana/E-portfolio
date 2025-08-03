@@ -1,30 +1,23 @@
-// Hero.jsx
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import Shape from "./Shapes.jsx";
 import WavingHand from "./Hand_weve";
-
 function Hero({ onOpenModal }) {
   const [showArrow, setShowArrow] = useState(false);
   const [arrowPos, setArrowPos] = useState(null);
-
   const aboutMeRef = useRef(null);
   const resumeRef = useRef(null);
-
   const handleAboutClick = () => {
     setShowArrow(true);
   };
-
   const handleArrowClick = () => {
     alert("Arrow clicked! You can do anything here.");
   };
-
   const handleEnvelopeClick = () => {
     onOpenModal?.(); // open modal in App.js
   };
-
   useEffect(() => {
     const updateArrow = () => {
       if (showArrow && aboutMeRef.current && resumeRef.current) {
@@ -40,7 +33,6 @@ function Hero({ onOpenModal }) {
         });
       }
     };
-
     updateArrow();
     window.addEventListener("resize", updateArrow);
     return () => window.removeEventListener("resize", updateArrow);
@@ -92,11 +84,9 @@ function Hero({ onOpenModal }) {
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
             <a
-              href="./Asset/i-751.pdf"
+              href="/Asset/Alphonse_Resume.pdf"  // Make sure the path is correct relative to the public folder
               className="social__link click"
-              download
-              ref={resumeRef}
-              aria-label="Download Resume"
+              download="Alphonse_Resume.pdf"
             >
               <FontAwesomeIcon icon={faFilePdf} size="2x" />
             </a>
@@ -142,10 +132,8 @@ function Hero({ onOpenModal }) {
           </g>
         </svg>
       )}
-
       <Shape />
     </section>
   );
 }
-
 export default Hero;

@@ -43,14 +43,14 @@ const BackgroundShapes = () => {
         });
       }}
       style={{
-        position: 'fixed',
+        position:'fixed',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        width:'100vw',
+        height:'100vh',
         pointerEvents: 'none',
         zIndex: -1,
-        overflow: 'hidden',
+        overflow:'hidden',
       }}
     >
       {shapeImages.map((src, i) => (
@@ -61,13 +61,13 @@ const BackgroundShapes = () => {
           className={`shape shape--${i}`}
           alt={`Shape ${i}`}
           style={{
-            position: 'absolute',
-            width: '40px',
-            height: '40px',
+            position:'absolute',
+            width:'40px',
+            height:'40px',
             top: `${Math.random() * 100}%`,
             left: `${Math.random() * 100}%`,
             opacity: 0.4,
-            transition: 'transform 0.2s ease',
+            transition:'transform 0.2s ease',
           }}
         />
       ))}
