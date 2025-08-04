@@ -1,6 +1,6 @@
 // src/components/Projects.jsx
 import React from 'react';
-import frontendImg from '../Assets/Developer.png';
+import frontendImg from '../Assets/Develope.png';
 import internshipImg from '../Assets/internship_project.png';
 import movieImg from '../Assets/Books_sub.png';
 import bookImg from '../Assets/library_img.png';
@@ -20,7 +20,7 @@ const projects = [
     subtitle: 'HTML, CSS, JavaScript, React',
     image:internshipImg,
     description: `Skilled in building responsive and interactive web applications. Eager to contribute to a collaborative team.`,
-     github: 'https://github.com/Ankubana/Alphonse_profile',
+     github: 'https://www.linkedin.com/in/alphonse-nkubana',
     live: 'https://www.linkedin.com/feed',
     appStore: 'https://github.com/Ankubana/Movies_Ecommerce',
   },
@@ -49,9 +49,6 @@ function Projects() {
     <section id="projects"  style={{ position: 'relative' }}>
       <div className="container">
         <div className="row">
-          <h1 className="section__title">
-            Here are some of my <span className="orange">Projects</span>
-          </h1>
           <ul className="project__link">
             {projects.map((project, idx) => (
               <li className="project" key={idx}>
@@ -66,21 +63,17 @@ function Projects() {
                         {project.github && (
                           <a href={project.github} className="project__decription--link" target="_blank" rel="noreferrer">
                                 <i className="fas fa-link"><FontAwesomeIcon icon={faLinkedin}/> </i>
-                            
-                          
                           </a>
                         )}
                         {project.live && (
                           <a href={project.live} className="project__decription--link" target="_blank" rel="noreferrer">
                           
                          <i className="fab fa-github"><FontAwesomeIcon icon={faGithub}/></i> 
-                            
                           </a>
                         )}
                         {project.appStore && (
                           <a href={project.appStore} className="project__decription--link" target="_blank" rel="noreferrer">
                             <i className="fab fa-app-store"><FontAwesomeIcon icon={faAppStore}/></i>
-                        
                           </a>
                         )}
                       </div>

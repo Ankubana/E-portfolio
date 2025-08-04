@@ -730,6 +730,17 @@ margin:16px 0;
  font-size:20px;
  color:white;
 }
+.arrow-line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw-line 2s ease forwards;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 
 /* 
  SHAPS 

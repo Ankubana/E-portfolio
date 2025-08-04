@@ -11,6 +11,7 @@ function Hero({ onOpenModal }) {
   const resumeRef = useRef(null);
   const handleAboutClick = () => {
     setShowArrow(true);
+    
   };
   const handleArrowClick = () => {
     alert("Arrow clicked! You can do anything here.");
@@ -24,20 +25,20 @@ function Hero({ onOpenModal }) {
         const start = aboutMeRef.current.getBoundingClientRect();
         const end = resumeRef.current.getBoundingClientRect();
         const container = document.getElementById("landing-page").getBoundingClientRect();
-
         setArrowPos({
-          x1: start.left + start.width / 2 - container.left,
-          y1: start.top + start.height / 2 - container.top,
-          x2: end.left + end.width / 2 - container.left,
-          y2: end.top + end.height / 2 - container.top,
+          x1:start.left + start.width / 2 - container.left,
+          y1:start.top + start.height / 2 - container.top,
+          x2:end.left + end.width / 2 - container.left,
+          y2:end.top + end.height / 2 - container.top,
         });
       }
     };
+    
+// Hide the arrow
     updateArrow();
     window.addEventListener("resize", updateArrow);
-    return () => window.removeEventListener("resize", updateArrow);
-  }, [showArrow]);
-
+    return ()=>window.removeEventListener("resize", updateArrow);
+  },[showArrow]);
   return (
     <section id="landing-page" style={{ position: "relative", padding: "2rem", minHeight: "400px" }}>
       <header className="header">
@@ -83,14 +84,22 @@ function Hero({ onOpenModal }) {
             >
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-            <a
-              href="/Alphonse_Resume.pdf"  // Make sure the path is correct relative to the public folder
-              className="social__link click"
-              download="/Alphonse_Resume.pdf"
-               rel="noopener noreferrer"
-            >
-              <FontAwesomeIcon icon={faFilePdf} size="2x" />
-            </a>
+            <div  style={{ display: "inline-block" }}>
+         <a
+         ref={resumeRef}
+             href="/Alphonse_Resume.pdf"
+             className="social__link"
+                download
+                rel="noopener noreferrer"
+               onClick={(e) => {
+                setShowArrow(true);
+    // Optional: hide arrow after 3 seconds
+                 setTimeout(() => setShowArrow(false), 3000);
+  }}
+>
+  <FontAwesomeIcon icon={faFilePdf} size="2x" />
+</a>
+            </div>
           </div>
         </div>
       </header>
@@ -119,17 +128,18 @@ function Hero({ onOpenModal }) {
               <polygon points="0 0, 15 3.5, 0 7" fill="blue" />
             </marker>
           </defs>
-          <g onClick={handleArrowClick} style={{ cursor: "pointer" }}>
+          <g onClick={handleArrowClick} style={{ cursor: "pointer", pointerEvents: "auto" }}>
             <line
-              x1={arrowPos.x1}
-              y1={arrowPos.y1}
-              x2={arrowPos.x2}
-              y2={arrowPos.y2}
-              stroke="green"
-              strokeWidth={3}
-              markerEnd="url(#arrowhead)"
-              strokeLinecap="round"
-            />
+                x1={arrowPos.x1}
+                y1={arrowPos.y1}
+                x2={arrowPos.x2}
+                y2={arrowPos.y2}
+                stroke="green"
+                strokeWidth={3}
+                markerEnd="url(#arrowhead)"
+                strokeLinecap="round"
+                className="arrow-line"
+/>
           </g>
         </svg>
       )}
