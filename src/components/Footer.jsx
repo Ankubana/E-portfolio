@@ -20,7 +20,7 @@ function Footer() {
             <figure className="footer__log">
               <img src={vision_img} alt="KubaVision Logo" className="footer__log--img" />
               <figcaption className="foot__logo--title">
-                kuba<span className="orange">Vision</span>
+               <span className="white_color">kuba</span> <span className="orange">Vision</span>
               </figcaption>
             </figure>
           </div>

@@ -4,41 +4,48 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import Shape from "./Shapes.jsx";
 import WavingHand from "./Hand_weve";
+
 function Hero({ onOpenModal }) {
   const [showArrow, setShowArrow] = useState(false);
   const [arrowPos, setArrowPos] = useState(null);
   const aboutMeRef = useRef(null);
   const resumeRef = useRef(null);
+
+  // Handle the click event for "About Me" and show arrow
   const handleAboutClick = () => {
     setShowArrow(true);
-    
   };
+
   const handleArrowClick = () => {
     alert("Arrow clicked! You can do anything here.");
   };
+
   const handleEnvelopeClick = () => {
-    onOpenModal?.(); // open modal in App.js
+    onOpenModal?.(); // Open modal in App.js
   };
+
   useEffect(() => {
     const updateArrow = () => {
       if (showArrow && aboutMeRef.current && resumeRef.current) {
         const start = aboutMeRef.current.getBoundingClientRect();
         const end = resumeRef.current.getBoundingClientRect();
         const container = document.getElementById("landing-page").getBoundingClientRect();
+        
+        // Calculate arrow position relative to the container
         setArrowPos({
-          x1:start.left + start.width / 2 - container.left,
-          y1:start.top + start.height / 2 - container.top,
-          x2:end.left + end.width / 2 - container.left,
-          y2:end.top + end.height / 2 - container.top,
+          x1: start.left + start.width / 2 - container.left,
+          y1: start.top + start.height / 2 - container.top,
+          x2: end.left + end.width / 2 - container.left,
+          y2: end.top + end.height / 2 - container.top,
         });
       }
     };
-    
-// Hide the arrow
-    updateArrow();
+
+    updateArrow(); // Update arrow position on mount
     window.addEventListener("resize", updateArrow);
-    return ()=>window.removeEventListener("resize", updateArrow);
-  },[showArrow]);
+    return () => window.removeEventListener("resize", updateArrow);
+  }, [showArrow]);
+
   return (
     <section id="landing-page" style={{ position: "relative", padding: "2rem", minHeight: "400px" }}>
       <header className="header">
@@ -84,37 +91,30 @@ function Hero({ onOpenModal }) {
             >
               <FontAwesomeIcon icon={faGithub} size="2x" />
             </a>
-            <div  style={{ display: "inline-block" }}>
-         <a
-         ref={resumeRef}
-             href="/Alphonse_Resume.pdf"
-             className="social__link"
-                download
-                rel="noopener noreferrer"
-               onClick={(e) => {
-                setShowArrow(true);
-    // Optional: hide arrow after 3 seconds
-                 setTimeout(() => setShowArrow(false), 3000);
-  }}
->
-  <FontAwesomeIcon icon={faFilePdf} size="2x" />
-</a>
-            </div>
+            <a
+              ref={resumeRef}
+              href="/Alphonse_Resume.pdf"
+              className="social__link"
+              download
+              rel="noopener noreferrer"
+              onClick={(e) => {
+                // Hide the arrow immediately after clicking the link
+                setShowArrow(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faFilePdf} size="2x" />
+            </a>
           </div>
         </div>
       </header>
 
-      <button
-        className="mail__btn"
-        onClick={handleEnvelopeClick}
-        aria-label="Contact"
-      >
+      <button className="mail__btn" onClick={handleEnvelopeClick} aria-label="Contact">
         <FontAwesomeIcon icon={faEnvelope} size="lg" />
       </button>
 
-      {/* Arrow */}
+      {/* Render the Arrow */}
       {showArrow && arrowPos && (
-        <svg className="arrow-svg">
+        <svg className="arrow-svg" style={{ position: "absolute", pointerEvents: "none", zIndex: 10 }}>
           <defs>
             <marker
               id="arrowhead"
@@ -130,21 +130,23 @@ function Hero({ onOpenModal }) {
           </defs>
           <g onClick={handleArrowClick} style={{ cursor: "pointer", pointerEvents: "auto" }}>
             <line
-                x1={arrowPos.x1}
-                y1={arrowPos.y1}
-                x2={arrowPos.x2}
-                y2={arrowPos.y2}
-                stroke="green"
-                strokeWidth={3}
-                markerEnd="url(#arrowhead)"
-                strokeLinecap="round"
-                className="arrow-line"
-/>
+              x1={arrowPos.x1}
+              y1={arrowPos.y1}
+              x2={arrowPos.x2}
+              y2={arrowPos.y2}
+              stroke="green"
+              strokeWidth={3}
+              markerEnd="url(#arrowhead)"
+              strokeLinecap="round"
+              className="arrow-line"
+            />
           </g>
         </svg>
       )}
+
       <Shape />
     </section>
   );
 }
+
 export default Hero;

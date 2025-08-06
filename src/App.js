@@ -29,6 +29,7 @@ function AppContent() {
 
   return (
     <>
+  
       {!isResumePage && <BackgroundShapes />}
       {!isResumePage && <Navbar />}
       {!isResumePage && <Hero onOpenModal={handleOpenModal} isModalOpen={isModalOpen} onCloseModal={handleCloseModal}/>}

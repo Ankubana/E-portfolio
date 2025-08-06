@@ -730,6 +730,9 @@ margin:16px 0;
  font-size:20px;
  color:white;
 }
+.white_color{
+ color:#F5F5F5;
+}
 .arrow-line {
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
