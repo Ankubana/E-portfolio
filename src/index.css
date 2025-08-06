@@ -489,7 +489,7 @@ z-Index:1000;
 }
 @keyframes name{
     from{
-        transform:translateY(-2500px);
+        transform:translateY(-1500px);
         
       }
       to{
