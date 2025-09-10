@@ -4,6 +4,7 @@ import frontendImg from '../Assets/Develope.png';
 import internshipImg from '../Assets/internship_project.png';
 import movieImg from '../Assets/Books_sub.png';
 import bookImg from '../Assets/library_img.png';
+import skintric from'../Assets/skinstric.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub, faAppStore,  } from '@fortawesome/free-brands-svg-icons';
 const projects = [
@@ -41,6 +42,15 @@ const projects = [
     github: 'https://github.com/Ankubana/Alpha_Ecommerce_Library',
     live: '#',
     appStore: 'https://github.com/Ankubana/Alpha_Ecommerce_Library',
+  },
+    {
+    title: 'Online Book Store',
+    subtitle: 'HTML, CSS, JavaScript, React',
+    image:skintric,
+    description: `Ai skinstric prediction .`,
+    github: 'https://github.com/Ankubana/skinstric_internship',
+    live: '#',
+    appStore: 'https://skinstricinternship-frontend.vercel.app/',
   },
 ];
 

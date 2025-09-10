@@ -157,8 +157,8 @@ const Resume = () => {
         <ul>
           {renderAnimatedListItems([
             "Languages: JavaScript, HTML, CSS, PHP",
-            "Frameworks: React, Tailwind CSS, Firebase, React Query",
-            "Tools: GitHub, VS Code, Chrome DevTools"
+            "Frameworks: React, Firebase, React Query",
+            "Tools: GitHub, VS Code, Chrome DevTools,vercel"
           ])}
         </ul>
       </section>
