@@ -75,8 +75,19 @@ const Resume = () => {
       </section>
 
       {/* Experience */}
+      
       <section style={styles.section} className="resume-container">
         <h2 style={styles.heading} data-aos="fade-left" data-aos-delay={0}>Professional Experience</h2>
+        <div style={{ marginTop: 20 }}>
+          <h3 data-aos="fade-right" data-aos-delay={0}>Frontend Developer Intern – Skinstric|August 16|2025 – sept|04|2025</h3>
+          <ul>
+            {renderAnimatedListItems([
+      
+              "• Developed and deployed a React web application during internship, implementing UI from Figma designs, form validation, selfie/image upload in base64, and demographics analysis features. Built interactive components for correcting AI predictions, ensured tablet/mobile responsiveness, and styled with CSS. Managed API integration, Git/GitHub version control, and Vercel deployment..",
+          
+            ])}
+          </ul>
+        </div>
 
         <div style={{ marginTop: 20 }}>
           <h3 data-aos="fade-right" data-aos-delay={0}>Frontend Engineer – Personal Projects | Feb 2025 – Present</h3>

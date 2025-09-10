@@ -93,7 +93,7 @@ function Hero({ onOpenModal }) {
             </a>
             <a
               ref={resumeRef}
-              href="/E-portfolio/Alphonse_Resume.pdf"
+              href="/E-portfolio/c:\Users\CP-nkubana\Desktop\Alphonse-Resume.pdf"
               className="social__link"
               download
               rel="noopener noreferrer"

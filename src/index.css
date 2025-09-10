@@ -15,6 +15,8 @@ filter:invert(1);
 }
 html{
   scroll-behavior:smooth;
+  overflow-x: hidden; 
+  overflow-y: auto; 
 }
 nav{
     display:flex;
@@ -805,6 +807,7 @@ left:100vh;
 /*responsive for small phonse,tablets and large smart phones */
 
 @media(max-width:768px) {
+
   .title{
      font-size:80px;
   }
@@ -830,6 +833,10 @@ left:100vh;
 /*small phone*/
 @media(max-width:550px)
 {
+  html{
+  scroll-behavior:smooth;
+  overflow:v;
+}
   .wave{
      font-size:12px;
    }
