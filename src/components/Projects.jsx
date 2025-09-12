@@ -20,7 +20,7 @@ const projects = [
     image:internshipImg,
     description: `Skilled in building responsive and interactive web applications. Eager to contribute to a collaborative team.`,
      github: 'https://github.com/Ankubana/Virtual_internship_NFT-marketplace',
-    live: 'https://www.linkedin.com/feed',
+      live: 'https://www.linkedin.com/feed',
     appStore: 'https://github.com/Ankubana/Virtual_internship_NFT-marketplace',
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     image:movieImg,
     description: `E-commerce platform for movies — browse, purchase, rent, or stream with secure payments and personalized suggestions.`,
      github: 'https://github.com/Ankubana/Movies_Ecommerce',
-    live: 'https://www.linkedin.com/feed',
+     live: 'https://www.linkedin.com/feed',
     appStore:'https://github.com/Ankubana/Movies_Ecommerce',
   },
   {
@@ -70,13 +70,13 @@ function Projects() {
                       <div className="project__description--links">
                         {project.github && (
                           <a href={project.github} className="project__decription--link" target="_blank" rel="noreferrer">
-                                <i className="fas fa-link"><FontAwesomeIcon icon={faLinkedin}/> </i>
+                                <i className="fas fa-link"><FontAwesomeIcon icon={faGithub}/> </i>
                           </a>
                         )}
                         {project.live && (
                           <a href={project.live} className="project__decription--link" target="_blank" rel="noreferrer">
                           
-                         <i className="fab fa-github"><FontAwesomeIcon icon={faGithub}/></i> 
+                         <i className="fab fa-github"><FontAwesomeIcon icon={faLinkedin}/></i> 
                           </a>
                         )}
                         {project.appStore && (
