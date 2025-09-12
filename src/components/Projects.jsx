@@ -70,13 +70,13 @@ function Projects() {
                       <div className="project__description--links">
                         {project.github && (
                           <a href={project.github} className="project__decription--link" target="_blank" rel="noreferrer">
-                                <i className="fas fa-link"><FontAwesomeIcon icon={faGithub}/> </i>
+                                <i className="fab fa-github"><FontAwesomeIcon icon={faLinkedin}/> </i>
                           </a>
                         )}
                         {project.live && (
                           <a href={project.live} className="project__decription--link" target="_blank" rel="noreferrer">
                           
-                         <i className="fab fa-github"><FontAwesomeIcon icon={faLinkedin}/></i> 
+                         <i className="fas fa-link"><FontAwesomeIcon icon={faGithub}/></i> 
                           </a>
                         )}
                         {project.appStore && (
