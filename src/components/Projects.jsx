@@ -28,9 +28,9 @@ const projects = [
     subtitle: 'HTML, CSS, JavaScript,React',
     image:movieImg,
     description: `E-commerce platform for movies — browse, purchase, rent, or stream with secure payments and personalized suggestions.`,
-     github: 'https://github.com/Ankubana/Alphonse-internship',
+     github: 'https://github.com/Ankubana/Virtual_internship_NFT-marketplace',
     live: 'https://www.linkedin.com/feed',
-    appStore: 'https://github.com/Ankubana/Movies_Ecommerce',
+    appStore:'https://github.com/Ankubana/Virtual_internship_NFT-marketplace',
   },
   {
     title: 'Online Book Store',
