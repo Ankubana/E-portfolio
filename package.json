@@ -1,7 +1,7 @@
 {
   "name": "kuba-vision",
   "version": "0.1.0",
-  "homepage": "https://ankubana.github.io/E-portfolio",
+  "homepage": ".",
   "public": true,
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
