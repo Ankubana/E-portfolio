@@ -13,8 +13,6 @@ const projects = [
     subtitle:'HTML, CSS, JavaScript, React',
     image:frontendImg,
     description: `Motivated and detail-oriented Front-End Developer with hands-on training from a full-time coding bootcamp. Skilled in responsive, interactive web apps.`,
-    github: 'https://www.linkedin.com/feed ',
-    live: 'https://github.com/Ankubana/Alphonse_profile',
   },
   {
     title: 'Internship Project',
@@ -32,7 +30,7 @@ const projects = [
     description: `E-commerce platform for movies — browse, purchase, rent, or stream with secure payments and personalized suggestions.`,
      github: 'https://github.com/Ankubana/Alphonse-internship',
     live: 'https://www.linkedin.com/feed',
-    appStore: 'https://github.com/Ankubana/Alphonse-internship',
+    appStore: 'https://github.com/Ankubana/Movies_Ecommerce',
   },
   {
     title: 'Online Book Store',
