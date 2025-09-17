@@ -7,12 +7,14 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const [darkMode, setDarkMode] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
   function openMenu() {
+    setMenuOpen(true);
     document.body.classList.add('menu--open');
   }
 
   function closeMenu() {
+    setMenuOpen(true);
     document.body.classList.remove('menu--open');
   }
 
@@ -29,11 +31,13 @@ function Navbar() {
   };
 
   const toggleModal = () => {
+ setMenuOpen(true)
     setIsModalOpen(prev => {
-      const newState = !prev;
-      document.body.classList.toggle('modal--open', newState);
+      const newState =!prev;
+      document.body.classList.toggle('modal--open',newState);
       return newState;
     });
+   
   };
 
   return (
@@ -70,7 +74,7 @@ function Navbar() {
           </button>
         </ul>
 
-        <div className={`menu__backdrop ${isModalOpen ? 'menu--open' : ''}`} onClick={closeMenu}>
+        <div className={`menu__backdrop ${menuOpen ? 'menu--open' : ''}`} onClick={closeMenu}>
           <button className="btn__menu btn__menu--close" onClick={closeMenu} aria-label="Close Menu">
             <FontAwesomeIcon icon={faTimes} />
           </button>

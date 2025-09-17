@@ -49,7 +49,6 @@ function Footer() {
             >
               Contact
             </a>
-
             <a
               href="/Assets/Resume.pdf"
               className="footer_social--link link__hover--effect link__hover-effect--white"
@@ -59,7 +58,6 @@ function Footer() {
               Resume
             </a>
           </div>
-
           <div className="copyright">&copy; 2025 Nkubana</div>
         </div>
       </div>

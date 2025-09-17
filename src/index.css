@@ -724,17 +724,15 @@ margin:16px 0;
 .footer__log{
  display:flex;
  justify-content:center;
- filter:invert(1);
 }
 .foot__logo--title{
  display:flex;
  align-items:center;
  padding:10px;
  font-size:20px;
- color:white;
 }
 .white_color{
- color:#F5F5F5;
+ color:white;
 }
 .arrow-line {
   stroke-dasharray: 1000;
