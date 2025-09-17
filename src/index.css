@@ -430,7 +430,7 @@ color:orangered !important;
 animation:par 3000ms forwards step-end ;
 }
 .header__par{
-animation:par 25000ms forwards step-end ;
+animation:par 35000ms forwards ease-in ;
 }
 @keyframes par{
     from{
@@ -460,12 +460,12 @@ body.resume-dark {
     margin-bottom:12px;
     text-align:left;
     line-height:1;
-     animation:Hey 10000ms forwards ease-in;
+     animation:Hey 10000ms forwards;
 }
 
 @keyframes Hey{
     from{
-        transform:translateX(-1030px);
+        transform:translateX(-730px);
         
       }
       to{
@@ -487,15 +487,16 @@ z-Index:1000;
     margin-bottom:12px;
     text-align:left;
     line-height:1;
-     animation:name 15000ms forwards ease-in;
+     animation:name 15000ms forwards step-end;
+  
 }
 @keyframes name{
     from{
-        transform:translateY(-1500px);
+        transform:translateX(-1000px);
         
       }
       to{
-         transform:translateY(0);
+         transform:translateX(0);
       }
 }
 .header{
