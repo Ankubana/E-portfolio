@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 import Shape from "./Shapes.jsx";
 import WavingHand from "./Hand_weve";
 
@@ -11,18 +12,9 @@ function Hero({ onOpenModal }) {
   const aboutMeRef = useRef(null);
   const resumeRef = useRef(null);
 
-  // Handle the click event for "About Me" and show arrow
-  const handleAboutClick = () => {
-    setShowArrow(true);
-  };
-
-  const handleArrowClick = () => {
-    alert("Arrow clicked! You can do anything here.");
-  };
-
-  const handleEnvelopeClick = () => {
-    onOpenModal?.(); // Open modal in App.js
-  };
+  const handleAboutClick = () => setShowArrow(true);
+  const handleArrowClick = () => alert("Arrow clicked! You can do anything here.");
+  const handleEnvelopeClick = () => onOpenModal?.();
 
   useEffect(() => {
     const updateArrow = () => {
@@ -30,8 +22,7 @@ function Hero({ onOpenModal }) {
         const start = aboutMeRef.current.getBoundingClientRect();
         const end = resumeRef.current.getBoundingClientRect();
         const container = document.getElementById("landing-page").getBoundingClientRect();
-        
-        // Calculate arrow position relative to the container
+
         setArrowPos({
           x1: start.left + start.width / 2 - container.left,
           y1: start.top + start.height / 2 - container.top,
@@ -41,13 +32,16 @@ function Hero({ onOpenModal }) {
       }
     };
 
-    updateArrow(); // Update arrow position on mount
+    updateArrow();
     window.addEventListener("resize", updateArrow);
     return () => window.removeEventListener("resize", updateArrow);
   }, [showArrow]);
 
   return (
-    <section id="landing-page" style={{ position: "relative", padding: "2rem", minHeight: "400px" }}>
+    <section
+      id="landing-page"
+      style={{ position: "relative", padding: "2rem", minHeight: "400px" }}
+    >
       <header className="header">
         <div className="header__content">
           <h1 className="title">
@@ -97,10 +91,7 @@ function Hero({ onOpenModal }) {
               className="social__link"
               download
               rel="noopener noreferrer"
-              onClick={(e) => {
-                // Hide the arrow immediately after clicking the link
-                setShowArrow(false);
-              }}
+              onClick={() => setShowArrow(false)}
             >
               <FontAwesomeIcon icon={faFilePdf} size="2x" />
             </a>
@@ -112,9 +103,12 @@ function Hero({ onOpenModal }) {
         <FontAwesomeIcon icon={faEnvelope} size="lg" />
       </button>
 
-      {/* Render the Arrow */}
+      {/* Animated Arrow */}
       {showArrow && arrowPos && (
-        <svg className="arrow-svg" style={{ position: "absolute", pointerEvents: "none", zIndex: 10 }}>
+        <svg
+          className="arrow-svg"
+          style={{ position: "absolute", pointerEvents: "none", zIndex: 10 }}
+        >
           <defs>
             <marker
               id="arrowhead"
@@ -128,8 +122,15 @@ function Hero({ onOpenModal }) {
               <polygon points="0 0, 15 3.5, 0 7" fill="blue" />
             </marker>
           </defs>
-          <g onClick={handleArrowClick} style={{ cursor: "pointer", pointerEvents: "auto" }}>
-            <line
+
+          <motion.g
+            onClick={handleArrowClick}
+            style={{ cursor: "pointer", pointerEvents: "auto" }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.line
               x1={arrowPos.x1}
               y1={arrowPos.y1}
               x2={arrowPos.x2}
@@ -138,9 +139,11 @@ function Hero({ onOpenModal }) {
               strokeWidth={3}
               markerEnd="url(#arrowhead)"
               strokeLinecap="round"
-              className="arrow-line"
+              initial={{ x2: arrowPos.x1, y2: arrowPos.y1 }}
+              animate={{ x2: arrowPos.x2, y2: arrowPos.y2 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
             />
-          </g>
+          </motion.g>
         </svg>
       )}
 
